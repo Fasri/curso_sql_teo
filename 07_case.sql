@@ -13,6 +13,17 @@ SELECT Idcliente,
             WHEN QtdePontos <= 5000 THEN 'Mago Aprendiz'
             WHEN QtdePontos <= 10000 THEN 'Mago Mestre'
             ELSE 'Mago Supremo'
-        END AS Categoria
+        END AS Categoria,
+
+        CASE 
+            WHEN QtdePontos <= 1000 THEN 1
+            ELSE 0
+        END AS FlagPonei,
+
+        CASE 
+            WHEN QtdePontos > 1000 THEN 1
+            ELSE 0
+        END AS FlagMago
+
 FROM clientes
 ORDER BY QtdePontos DESC;
