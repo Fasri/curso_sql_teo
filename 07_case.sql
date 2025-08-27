@@ -9,9 +9,9 @@ SELECT Idcliente,
         Qtdepontos,
         CASE 
             WHEN QtdePontos <= 500 THEN 'Ponei'
-            WHEN QtdePontos BETWEEN 501 AND 1000 THEN 'Ponei Premium'
-            WHEN QtdePontos BETWEEN 1001 AND 5000 THEN 'Mago Aprendiz'
-            WHEN QtdePontos BETWEEN 5001 AND 10000 THEN 'Mago Mestre'
+            WHEN QtdePontos <= 1000 THEN 'Ponei Premium'
+            WHEN QtdePontos <= 5000 THEN 'Mago Aprendiz'
+            WHEN QtdePontos <= 10000 THEN 'Mago Mestre'
             ELSE 'Mago Supremo'
         END AS Categoria
 FROM clientes
